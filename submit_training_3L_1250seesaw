@@ -1,0 +1,42 @@
+universe = vanilla
++AccountingGroup = "group_rutgers.mchristos"
+Requirements = (Arch == "X86_64")
+Executable = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/run_training_3L_1250seesaw.sh
+should_transfer_files = NO
+Notification=never
+
+output = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L1250Seesaw.out
+error = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L1250Seesaw.err
+log = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L1250Seesaw.log
+arguments = 25 NCuts
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L1250Seesaw.out
+error = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L1250Seesaw.err
+log = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L1250Seesaw.log
+arguments = 50 NCuts
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L1250Seesaw.out
+error = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L1250Seesaw.err
+log = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L1250Seesaw.log
+arguments = 100 NCuts
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L1250Seesaw.out
+error = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L1250Seesaw.err
+log = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L1250Seesaw.log
+arguments = 200 NCuts
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L1250Seesaw.out
+error = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L1250Seesaw.err
+log = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L1250Seesaw.log
+arguments = 1250 NCuts
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L1250Seesaw.out
+error = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L1250Seesaw.err
+log = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L1250Seesaw.log
+arguments = 400 NCuts
+queue

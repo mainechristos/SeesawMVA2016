@@ -1,0 +1,42 @@
+universe = vanilla
++AccountingGroup = "group_rutgers.mchristos"
+Requirements = (Arch == "X86_64")
+Executable = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/run_training_3L_10vars_700seesaw.sh
+should_transfer_files = NO
+Notification=never
+
+output = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L700Seesaw_10vars.out
+error = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L700Seesaw_10vars.err
+log = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L700Seesaw_10vars.log
+arguments = 25 Ntrees10
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L700Seesaw_10vars.out
+error = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L700Seesaw_10vars.err
+log = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L700Seesaw_10vars.log
+arguments = 50 Ntrees10
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L700Seesaw_10vars.out
+error = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L700Seesaw_10vars.err
+log = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L700Seesaw_10vars.log
+arguments = 100 Ntrees10
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L700Seesaw_10vars.out
+error = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L700Seesaw_10vars.err
+log = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L700Seesaw_10vars.log
+arguments = 200 Ntrees10
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L700Seesaw_10vars.out
+error = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L700Seesaw_10vars.err
+log = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L700Seesaw_10vars.log
+arguments = 300 Ntrees10
+queue
+
+output = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L700Seesaw_10vars.out
+error = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L700Seesaw_10vars.err
+log = /cms/mchristos/ANN/Seesaw/2016/Seesaw_2_16_19/logs/$(Cluster)_output_3L700Seesaw_10vars.log
+arguments = 400 Ntrees10
+queue

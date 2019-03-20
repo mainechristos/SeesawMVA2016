@@ -1,0 +1,132 @@
+universe = vanilla
++AccountingGroup = "group_rutgers.mchristos"
+Requirements = (Arch == "X86_64")
+Executable = run_signal_3L_2016.sh
+should_transfer_files = NO
+Notification=never
+
+output = outFiles/Application_1/InputBundle_Seesaw1250_Input_0/logs/$(Cluster)_output_0.out
+error = outFiles/Application_1/InputBundle_Seesaw1250_Input_0/logs/$(Cluster)_output_0.err
+log = outFiles/Application_1/InputBundle_Seesaw1250_Input_0/logs/$(Cluster)_output_0.log
+arguments = 1 InputBundle_Seesaw1250_Input_0
+queue
+
+output = outFiles/Application_1/InputBundle_Seesaw1250_Input_1/logs/$(Cluster)_output_0.out
+error = outFiles/Application_1/InputBundle_Seesaw1250_Input_1/logs/$(Cluster)_output_0.err
+log = outFiles/Application_1/InputBundle_Seesaw1250_Input_1/logs/$(Cluster)_output_0.log
+arguments = 1 InputBundle_Seesaw1250_Input_1
+
+queue
+
+output = outFiles/Application_1/InputBundle_Seesaw1250_Input_2/logs/$(Cluster)_output_0.out
+error = outFiles/Application_1/InputBundle_Seesaw1250_Input_2/logs/$(Cluster)_output_0.err
+log = outFiles/Application_1/InputBundle_Seesaw1250_Input_2/logs/$(Cluster)_output_0.log
+arguments = 1 InputBundle_Seesaw1250_Input_2
+
+queue
+
+output = outFiles/Application_1/InputBundle_Seesaw1250_Input_3/logs/$(Cluster)_output_0.out
+error = outFiles/Application_1/InputBundle_Seesaw1250_Input_3/logs/$(Cluster)_output_0.err
+log = outFiles/Application_1/InputBundle_Seesaw1250_Input_3/logs/$(Cluster)_output_0.log
+arguments = 1 InputBundle_Seesaw1250_Input_3
+
+queue
+
+output = outFiles/Application_1/InputBundle_Seesaw1250_Input_4/logs/$(Cluster)_output_0.out
+error = outFiles/Application_1/InputBundle_Seesaw1250_Input_4/logs/$(Cluster)_output_0.err
+log = outFiles/Application_1/InputBundle_Seesaw1250_Input_4/logs/$(Cluster)_output_0.log
+arguments = 1 InputBundle_Seesaw1250_Input_4
+
+queue
+
+output = outFiles/Application_1/InputBundle_Seesaw1250_Input_5/logs/$(Cluster)_output_0.out
+error = outFiles/Application_1/InputBundle_Seesaw1250_Input_5/logs/$(Cluster)_output_0.err
+log = outFiles/Application_1/InputBundle_Seesaw1250_Input_5/logs/$(Cluster)_output_0.log
+arguments = 1 InputBundle_Seesaw1250_Input_5
+
+queue
+
+
+output = outFiles/Application_1/InputBundle_Seesaw300_Input_6/logs/$(Cluster)_output_0.out
+error = outFiles/Application_1/InputBundle_Seesaw300_Input_6/logs/$(Cluster)_output_0.err
+log = outFiles/Application_1/InputBundle_Seesaw300_Input_6/logs/$(Cluster)_output_0.log
+arguments = 1 InputBundle_Seesaw300_Input_6
+
+queue
+
+output = outFiles/Application_1/InputBundle_Seesaw300_Input_7/logs/$(Cluster)_output_0.out
+error = outFiles/Application_1/InputBundle_Seesaw300_Input_7/logs/$(Cluster)_output_0.err
+log = outFiles/Application_1/InputBundle_Seesaw300_Input_7/logs/$(Cluster)_output_0.log
+arguments = 1 InputBundle_Seesaw300_Input_7
+
+queue
+
+output = outFiles/Application_1/InputBundle_Seesaw300_Input_8/logs/$(Cluster)_output_0.out
+error = outFiles/Application_1/InputBundle_Seesaw300_Input_8/logs/$(Cluster)_output_0.err
+log = outFiles/Application_1/InputBundle_Seesaw300_Input_8/logs/$(Cluster)_output_0.log
+arguments = 1 InputBundle_Seesaw300_Input_8
+
+queue
+
+output = outFiles/Application_1/InputBundle_Seesaw300_Input_9/logs/$(Cluster)_output_0.out
+error = outFiles/Application_1/InputBundle_Seesaw300_Input_9/logs/$(Cluster)_output_0.err
+log = outFiles/Application_1/InputBundle_Seesaw300_Input_9/logs/$(Cluster)_output_0.log
+arguments = 1 InputBundle_Seesaw300_Input_9
+
+queue
+
+output = outFiles/Application_1/InputBundle_Seesaw300_Input_10/logs/$(Cluster)_output_0.out
+error = outFiles/Application_1/InputBundle_Seesaw300_Input_10/logs/$(Cluster)_output_0.err
+log = outFiles/Application_1/InputBundle_Seesaw300_Input_10/logs/$(Cluster)_output_0.log
+arguments = 1 InputBundle_Seesaw300_Input_10
+
+queue
+
+output = outFiles/Application_1/InputBundle_Seesaw300_Input_11/logs/$(Cluster)_output_0.out
+error = outFiles/Application_1/InputBundle_Seesaw300_Input_11/logs/$(Cluster)_output_0.err
+log = outFiles/Application_1/InputBundle_Seesaw300_Input_11/logs/$(Cluster)_output_0.log
+arguments = 1 InputBundle_Seesaw300_Input_11
+
+queue
+
+output = outFiles/Application_1/InputBundle_Seesaw700_Input_12/logs/$(Cluster)_output_0.out
+error = outFiles/Application_1/InputBundle_Seesaw700_Input_12/logs/$(Cluster)_output_0.err
+log = outFiles/Application_1/InputBundle_Seesaw700_Input_12/logs/$(Cluster)_output_0.log
+arguments = 1 InputBundle_Seesaw700_Input_12
+
+queue
+
+output = outFiles/Application_1/InputBundle_Seesaw700_Input_13/logs/$(Cluster)_output_0.out
+error = outFiles/Application_1/InputBundle_Seesaw700_Input_13/logs/$(Cluster)_output_0.err
+log = outFiles/Application_1/InputBundle_Seesaw700_Input_13/logs/$(Cluster)_output_0.log
+arguments = 1 InputBundle_Seesaw700_Input_13
+
+queue
+
+output = outFiles/Application_1/InputBundle_Seesaw700_Input_14/logs/$(Cluster)_output_0.out
+error = outFiles/Application_1/InputBundle_Seesaw700_Input_14/logs/$(Cluster)_output_0.err
+log = outFiles/Application_1/InputBundle_Seesaw700_Input_14/logs/$(Cluster)_output_0.log
+arguments = 1 InputBundle_Seesaw700_Input_14
+
+queue
+
+output = outFiles/Application_1/InputBundle_Seesaw700_Input_15/logs/$(Cluster)_output_0.out
+error = outFiles/Application_1/InputBundle_Seesaw700_Input_15/logs/$(Cluster)_output_0.err
+log = outFiles/Application_1/InputBundle_Seesaw700_Input_15/logs/$(Cluster)_output_0.log
+arguments = 1 InputBundle_Seesaw700_Input_15
+
+queue
+
+output = outFiles/Application_1/InputBundle_Seesaw700_Input_16/logs/$(Cluster)_output_0.out
+error = outFiles/Application_1/InputBundle_Seesaw700_Input_16/logs/$(Cluster)_output_0.err
+log = outFiles/Application_1/InputBundle_Seesaw700_Input_16/logs/$(Cluster)_output_0.log
+arguments = 1 InputBundle_Seesaw700_Input_16
+
+queue
+
+output = outFiles/Application_1/InputBundle_Seesaw700_Input_17/logs/$(Cluster)_output_0.out
+error = outFiles/Application_1/InputBundle_Seesaw700_Input_17/logs/$(Cluster)_output_0.err
+log = outFiles/Application_1/InputBundle_Seesaw700_Input_17/logs/$(Cluster)_output_0.log
+arguments = 1 InputBundle_Seesaw700_Input_17
+
+queue
