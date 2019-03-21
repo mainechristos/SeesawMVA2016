@@ -13,6 +13,14 @@
 #include "TTreeReader.h"
 #include "TTreeReaderValue.h"
 #include "TMVA/Tools.h"
+#include "/cms/mchristos/ANN/Seesaw/2016/custom_functions/inputVars.C"
+#include "/cms/mchristos/ANN/Seesaw/2016/custom_functions/inputVars2.C"
+#include "/cms/mchristos/ANN/Seesaw/2016/custom_functions/inputVars3.C"
+#include "/cms/mchristos/ANN/Seesaw/2016/custom_functions/inputVars4.C"
+#include "/cms/mchristos/ANN/Seesaw/2016/custom_functions/inputVars5.C"
+#include "/cms/mchristos/ANN/Seesaw/2016/custom_functions/inputVars6.C"
+#include "/cms/mchristos/ANN/Seesaw/2016/custom_functions/inputVars8.C"
+
 
 
 using namespace TMVA;
@@ -554,9 +562,10 @@ void runBackground(TString ifile = ""){
       //    LightLeptonNativeIndex3 = 0;
       // }
 
-      // PtRatio1 = PtRatio(LightLeptonPt0,LightLeptonPt1,LightLeptonPt2);
-      // PtRatio2 = PtRatio(LightLeptonPt1,LightLeptonPt0,LightLeptonPt2);
-      // PtRatio3 = PtRatio(LightLeptonPt2,LightLeptonPt0,LightLeptonPt1);
+      PtRatio1 = PtRatio(LightLeptonPt0,LightLeptonPt1,LightLeptonPt2);
+      PtRatio2 = PtRatio(LightLeptonPt1,LightLeptonPt0,LightLeptonPt2);
+      PtRatio3 = PtRatio(LightLeptonPt2,LightLeptonPt0,LightLeptonPt1);
+
 
       // PtRatio4L1 = PtRatio4(LightLeptonPt0,LightLeptonPt1,LightLeptonPt2,LightLeptonPt3);
       // PtRatio4L2 = PtRatio4(LightLeptonPt1,LightLeptonPt0,LightLeptonPt2,LightLeptonPt3);
