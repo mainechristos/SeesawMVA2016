@@ -14,6 +14,13 @@
 #include "TTreeReaderValue.h"
 #include "TMVA/Tools.h"
 
+#include "/cms/mchristos/ANN/Seesaw/2016/custom_functions/inputVars.C"
+#include "/cms/mchristos/ANN/Seesaw/2016/custom_functions/inputVars2.C"
+#include "/cms/mchristos/ANN/Seesaw/2016/custom_functions/inputVars3.C"
+#include "/cms/mchristos/ANN/Seesaw/2016/custom_functions/inputVars4.C"
+#include "/cms/mchristos/ANN/Seesaw/2016/custom_functions/inputVars5.C"
+#include "/cms/mchristos/ANN/Seesaw/2016/custom_functions/inputVars6.C"
+#include "/cms/mchristos/ANN/Seesaw/2016/custom_functions/inputVars8.C"
 
 using namespace TMVA;
 
@@ -26,6 +33,7 @@ void runBackground(TString ifile = ""){
    TMVA::Reader *reader1 = new TMVA::Reader( "!Color:!Silent" );  
    TMVA::Reader *reader2 = new TMVA::Reader( "!Color:!Silent" );    
    TMVA::Reader *reader3 = new TMVA::Reader( "!Color:!Silent" );   
+   TMVA::Reader *reader4 = new TMVA::Reader( "!Color:!Silent" );   
 
 
    Float_t ElectronDXY0, ElectronDXY1, ElectronDXY2, LightLeptonPhi0, LightLeptonPhi1, LightLeptonPhi2;
@@ -34,7 +42,7 @@ void runBackground(TString ifile = ""){
    Float_t LightLeptonEta0, LightLeptonEta1, LightLeptonEta2, LightLeptonEta3, LightLeptonMass, LightLeptonPairDR0, LightLeptonPairDR1, LightLeptonPairDR2;
    Float_t JetN;
    Int_t LightLeptonN,  ElectronN, LightLeptonTightType3D, MuonN;
-   Float_t PtRatio1, PtRatio2, PtRatio3, DPhi1, DPhi2,  DPhi3, DPhi4, DPhi5, DPhi6, LightLeptonDXY0, LightLeptonDXY1, LightLeptonDXY2; 
+   Float_t PtRatio1, PtRatio2, PtRatio3, DPhi1, DPhi2,  DPhi3, DPhi4, DPhi5, DPhi6, LightLeptonDXY0, LightLeptonDXY1, LightLeptonDXY2, L3Bins27_0_; 
    Float_t metHtRatio, metStRatio, metLtRatio, metHtSquaredRatio, metSquaredStRatio, metLtSquaredRatio, metHtQuadRatio, metQuadStRatio, metLtQuadRatio, HT, ST, LightLeptonBestMSSSF, LightLeptonPairPt;
    Float_t PtRatio4L1, PtRatio4L2, PtRatio4L3, PtRatio4L4;
    Float_t BJetN;
@@ -204,14 +212,68 @@ void runBackground(TString ifile = ""){
    //reader3->AddVariable("LightLeptonPairPt := Alt$(LightLeptonPairPt[0],0)",&LightLeptonPairPt);
    
 
+   //reader4->AddVariable("LT := Alt$(LT,0)", &LT);
+   //reader4->AddVariable("MET := Alt$(MET,0)", &MET);
+   reader4->AddVariable("LightLeptonPt0 := Alt$(LightLeptonPt[0],0)", &LightLeptonPt0 );
+   reader4->AddVariable("LightLeptonPt1 := Alt$(LightLeptonPt[1],0)",&LightLeptonPt1);
+   reader4->AddVariable("LightLeptonPt2 := Alt$(LightLeptonPt[2],0)",&LightLeptonPt2);
+   //reader4->AddVariable("LightLeptonPt3 := Alt$(LightLeptonPt[3],0)",&LightLeptonPt3);
+   //reader4->AddVariable("MT3 := Alt$(MT3,0)",&MT3);
+   reader4->AddVariable("LightLeptonEta0 := Alt$(LightLeptonEta[0],0)", &LightLeptonEta0 );
+   reader4->AddVariable("LightLeptonEta1 := Alt$(LightLeptonEta[1],0)",&LightLeptonEta1);
+   reader4->AddVariable("LightLeptonEta2 := Alt$(LightLeptonEta[2],0)",&LightLeptonEta2);
+   //reader4->AddVariable("LightLeptonEta3 := Alt$(LightLeptonEta[3],0)",&LightLeptonEta3);
+   reader4->AddVariable("LightLeptonMass := Alt$(LightLeptonMass[0],0)",&LightLeptonMass);
+   //reader4->AddVariable("JetN := JetN[0]",&JetN);
+   reader4->AddVariable("BJetN := Sum$(JetCombinedInclusiveSecondaryVertexV2BJetTags>0.8484&&fabs(JetEta)<2.4)",&BJetN);
+   reader4->AddVariable("LightLeptonPairDR := Alt$(LightLeptonPairDR[0],0)", &LightLeptonPairDR0 );
+   //reader4->AddVariable("LightLeptonBestMOSSF := Alt$(LightLeptonBestMOSSF[0],0)", &LightLeptonBestMOSSF );
+
+   //reader4->AddVariable("PtRatio1 := PtRatio(LightLeptonPt[0],LightLeptonPt[1],LightLeptonPt[2])", &PtRatio1);
+   //reader4->AddVariable("PtRatio2 := PtRatio(LightLeptonPt[1],LightLeptonPt[0],LightLeptonPt[2])", &PtRatio2);
+   //reader4->AddVariable("PtRatio3 := PtRatio(LightLeptonPt[2],LightLeptonPt[0],LightLeptonPt[1])", &PtRatio3);
+
+   //reader4->AddVariable("PtRatio4L1 := PtRatio4(LightLeptonPt[0],LightLeptonPt[1],LightLeptonPt[2],LightLeptonPt[3])", &PtRatio4L1);
+   //reader4->AddVariable("PtRatio4L2 := PtRatio4(LightLeptonPt[1],LightLeptonPt[0],LightLeptonPt[2],LightLeptonPt[3])", &PtRatio4L2);
+   //reader4->AddVariable("PtRatio4L3 := PtRatio4(LightLeptonPt[2],LightLeptonPt[0],LightLeptonPt[1],LightLeptonPt[3])", &PtRatio4L3);
+   //reader4->AddVariable("PtRatio4L4 := PtRatio4(LightLeptonPt[3],LightLeptonPt[1],LightLeptonPt[2],LightLeptonPt[0])", &PtRatio4L4);
+
+   //reader4->AddVariable("DPhi1 := DeltaPhi(LightLeptonEta[0],LightLeptonEta[1])", &DPhi1);
+   //reader4->AddVariable("DPhi2 := DeltaPhi(LightLeptonEta[1],LightLeptonEta[2])", &DPhi2);
+   //reader4->AddVariable("DPhi3 := DeltaPhi(LightLeptonEta[2],LightLeptonEta[0])", &DPhi3);
+
+   reader4->AddVariable("LightLeptonDXY0 := LightLeptonDXY[0]", &LightLeptonDXY0);
+   reader4->AddVariable("LightLeptonDXY1 := LightLeptonDXY[1]", &LightLeptonDXY1);
+   reader4->AddVariable("LightLeptonDXY2 := LightLeptonDXY[2]", &LightLeptonDXY2);
+   //reader4->AddVariable("DPhi4 := DeltaPhi(LightLeptonEta[0],LightLeptonEta[3])", &DPhi4);
+   //reader4->AddVariable("DPhi5 := DeltaPhi(LightLeptonEta[1],LightLeptonEta[3])", &DPhi5);
+   //reader4->AddVariable("DPhi6 := DeltaPhi(LightLeptonEta[2],LightLeptonEta[3])", &DPhi6);
+
+   // reader4->AddVariable("metHtRatio := metRatio(Alt$(MET,0),Alt$(Sum$(JetPt),0))", &metHtRatio);
+   // reader4->AddVariable("metStRatio := metRatio(Alt$(MET,0),LT+Alt$(MET,0)+Alt$(Sum$(JetPt),0))", &metStRatio);
+   // reader4->AddVariable("metLtRatio := metRatio(Alt$(MET,0),Alt$(LT,0))", &metLtRatio);
+
+   // reader4->AddVariable("metHtSquaredRatio := metSquaredRatio(Alt$(MET,0),Alt$(Sum$(JetPt),0))", &metHtSquaredRatio);
+   // reader4->AddVariable("metSquaredStRatio := metSquaredRatio(Alt$(MET,0),LT+Alt$(MET,0)+Alt$(Sum$(JetPt),0))", &metSquaredStRatio);
+   // reader4->AddVariable("metLtSquaredRatio := metSquaredRatio(Alt$(MET,0),Alt$(LT,0))", &metLtSquaredRatio);
+   
+   // reader4->AddVariable("metHtQuadRatio := metQuadRatio(Alt$(MET,0),Alt$(Sum$(JetPt),0))", &metHtQuadRatio);
+   // reader4->AddVariable("metQuadStRatio := metQuadRatio(Alt$(MET,0),LT+Alt$(MET,0)+Alt$(Sum$(JetPt),0))", &metQuadStRatio);
+   // reader4->AddVariable("metLtQuadRatio := metQuadRatio(Alt$(MET,0),Alt$(LT,0))", &metLtQuadRatio);
+
+   //reader4->AddVariable("HT := Alt$(Sum$(JetPt),0)",&HT);
+   reader4->AddVariable("ST := Alt$(LT,0)+Alt$(MET,0)+Alt$(Sum$(JetPt),0)",&ST);
+   //reader4->AddVariable("LightLeptonBestMSSSF := Alt$(LightLeptonBestMSSSF[0],0)",&LightLeptonBestMSSSF);
+   //reader4->AddVariable("LightLeptonPairPt := Alt$(LightLeptonPairPt[0],0)",&LightLeptonPairPt);
 
    // --- Book the MVA methodsSeesaw_3L_700Seesaw_10vars_Skims
 
 
 
-   reader1->BookMVA( "BDTG method",  "dl/weights/Seesaw_3L_300Seesaw_10vars_Skims_BDT.weights.xml");
-   reader2->BookMVA( "BDTG method",  "dl/weights/Seesaw_3L_700Seesaw_10vars_Skims_BDT.weights.xml");
-   reader3->BookMVA( "BDTG method",  "dl/weights/Seesaw_3L_1250Seesaw_10vars_Skims_BDT.weights.xml");
+   reader1->BookMVA( "BDTG method",  "dl/weights/Seesaw_3L_300Seesaw_L3AboveZ_Skims_BDT.weights.xml");
+   reader2->BookMVA( "BDTG method",  "dl/weights/Seesaw_3L_300Seesaw_L3OnZ_Skims_BDT.weights.xml");
+   reader3->BookMVA( "BDTG method",  "dl/weights/Seesaw_3L_300Seesaw_L3BelowZ_Skims_BDT.weights.xml");
+   reader4->BookMVA( "BDTG method",  "dl/weights/Seesaw_3L_300Seesaw_L3OSSF0_Skims_BDT.weights.xml");
 
 
    vector<float>  vecBDTG; 
@@ -254,6 +316,7 @@ void runBackground(TString ifile = ""){
    TTreeReaderValue<vector<Int_t>> inLightLeptonN(myReader, "LightLeptonN");
    TTreeReaderValue<vector<Int_t>> inElectronN(myReader, "ElectronN");
    TTreeReaderValue<vector<Int_t>> inMuonN(myReader, "MuonN");
+   TTreeReaderValue<int> inL3Bins27_0_(myReader, "L3Bins27_0_");
    TTreeReaderValue<vector<Float_t>> inJetPt(myReader, "JetPt");
    TTreeReaderValue<vector<Float_t>> inLightLeptonBestMSSSF(myReader, "LightLeptonBestMSSSF");
    TTreeReaderValue<vector<Float_t>> inLightLeptonPairPt(myReader, "LightLeptonPairPt");
@@ -261,7 +324,7 @@ void runBackground(TString ifile = ""){
    
 
 
-   TFile *endfile = new TFile("outFiles/Application_JJJ/QQQ/BDTtree2.root","RECREATE");   
+   TFile *endfile = new TFile("outFiles/Application_JJJ/QQQ/BDTtree.root","RECREATE");   
    
    endfile->cd();
 
@@ -293,10 +356,7 @@ void runBackground(TString ifile = ""){
 
    std::vector<float> *BDTResponse1 = new std::vector<float>(0);
    found_back_tree->Branch("SeesawBDT300_2_19_19",&BDTResponse1);
-    std::vector<float> *BDTResponse2 = new std::vector<float>(0);
-   found_back_tree->Branch("SeesawBDT700_2_19_19",&BDTResponse2);
-    std::vector<float> *BDTResponse3 = new std::vector<float>(0);
-   found_back_tree->Branch("SeesawBDT1250_2_19_19",&BDTResponse3);
+
 
    std::vector<float> vecVar(4); // vector for EvaluateMVA tests
 
@@ -352,6 +412,12 @@ void runBackground(TString ifile = ""){
          LightLeptonDXY0 = 0;
          LightLeptonDXY1 = 0;
          LightLeptonDXY2 = 0;
+      }
+
+      if(*inL3Bins27_0_<0){
+         L3Bins27_0_ = 30;
+      }else{
+         L3Bins27_0_ = *inL3Bins27_0_;
       }
 
 
@@ -573,6 +639,7 @@ void runBackground(TString ifile = ""){
 
       ST=LT+MET+HT;
 
+
       // metHtRatio=metRatio(MET,HT);
       // metStRatio=metRatio(MET,ST);
       // metLtRatio=metRatio(MET,LT);
@@ -598,13 +665,30 @@ void runBackground(TString ifile = ""){
       float result1 =  reader1->EvaluateMVA( "BDTG method" );
       float result2 =  reader2->EvaluateMVA( "BDTG method" );
       float result3 =  reader3->EvaluateMVA( "BDTG method" );
+      float result4 =  reader4->EvaluateMVA( "BDTG method" );
 
       BDTResponse1->clear();
-      BDTResponse1->push_back(result1);
-      BDTResponse2->clear();
-      BDTResponse2->push_back(result2);
-      BDTResponse3->clear();
-      BDTResponse3->push_back(result3);
+
+      if(L3Bins27_0_<25&&L3Bins27_0_>20){
+
+         BDTResponse1->push_back(result1);
+
+      }else if(L3Bins27_0_<17&&L3Bins27_0_>12){
+
+         BDTResponse1->push_back(result2);
+
+      }else if(L3Bins27_0_<21&&L3Bins27_0_>16){
+
+         BDTResponse1->push_back(result3);
+
+      }else{
+
+         BDTResponse1->push_back(result4);
+
+      }
+
+      
+
       found_back_tree->Fill();
       count++;
 
